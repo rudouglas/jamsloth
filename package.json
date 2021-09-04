@@ -9,6 +9,7 @@
     "gatsby-plugin-gatsby-cloud": "^2.11.0",
     "gatsby-plugin-image": "^1.13.0",
     "gatsby-plugin-manifest": "^3.13.0",
+    "gatsby-plugin-newrelic-test": "^1.1.27",
     "gatsby-plugin-offline": "^4.13.0",
     "gatsby-plugin-react-helmet": "^4.13.0",
     "gatsby-plugin-sharp": "^3.13.0",
@@ -27,7 +28,7 @@
   ],
   "license": "0BSD",
   "scripts": {
-    "build": "gatsby build",
+    "build": "gatsby build --open-tracing-config-file ./node_modules/gatsby-plugin-newrelic-test/zipkin-local.js --graphql-tracing",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "npm run develop",

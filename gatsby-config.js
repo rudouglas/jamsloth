@@ -30,6 +30,15 @@ module.exports = {
       },
     },
     `gatsby-plugin-gatsby-cloud`,
+    {
+      resolve: "gatsby-plugin-newrelic-test",
+      options: {
+        NR_INGEST_KEY: process.env.NEW_RELIC_INSERT_KEY || '',
+        NR_LICENSE_KEY: process.env.NEW_RELIC_LICENSE_KEY || '',
+        SITE_NAME: 'jamsloth',
+        staging: true,
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
