@@ -5,8 +5,15 @@ import { StaticImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
-const IndexPage = () => (
-  <Layout>
+const IndexPage = () => {
+  const items = []
+  for(var i = 0; i < 100; i++) {
+    const url = `http://placeimg.com/640/360/any?=${i}`
+    items.push(<img key={i} alt={i} src={url} />)
+  }
+  
+  return (
+    <Layout>
     <Seo title="Home" />
     <h1>Hi people</h1>
     <p>Welcome to your new Gatsby site.</p>
@@ -23,7 +30,9 @@ const IndexPage = () => (
       <Link to="/page-2/">Go to page 2</Link> <br />
       <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
     </p>
+    {items}
   </Layout>
-)
+  )
+}
 
 export default IndexPage
